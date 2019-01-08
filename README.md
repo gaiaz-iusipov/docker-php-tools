@@ -22,7 +22,7 @@ COPY --from=gaiaz/php-tools:7.2-alpine \
     /usr/local/bin/
 
 RUN set -xe \
-    && composer --version \
+    && COMPOSER_ALLOW_SUPERUSER=1 composer --version \
     && cachetool --version \
     && php-cs-fixer --version
 ```
