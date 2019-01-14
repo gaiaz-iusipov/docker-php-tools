@@ -14,6 +14,11 @@ RUN curl --silent --show-error --output /usr/local/bin/php-cs-fixer \
         https://cs.symfony.com/download/php-cs-fixer-v2.phar \
     && chmod +x /usr/local/bin/php-cs-fixer
 
+# Installing FOAL
+RUN curl --silent --show-error --output /usr/local/bin/foal \
+        https://phar.phpunit.de/foal.phar \
+    && chmod +x /usr/local/bin/foal
+
 FROM scratch
 
 LABEL maintainer="Gaiaz Iusipov <g.iusipov@gmail.com>"
@@ -22,4 +27,5 @@ COPY --from=builder \
     /usr/local/bin/composer \
     /usr/local/bin/cachetool \
     /usr/local/bin/php-cs-fixer \
+    /usr/local/bin/foal \
     /

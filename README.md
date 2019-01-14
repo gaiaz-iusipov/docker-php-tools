@@ -9,6 +9,7 @@
 - [Composer](https://getcomposer.org/) - Dependency Manager for PHP
 - [CacheTool](http://gordalina.github.io/cachetool/) - Manage cache in the CLI
 - [PHP CS Fixer](https://cs.symfony.com/) - A tool to automatically fix PHP Coding Standards issues
+- [FOAL](https://github.com/sebastianbergmann/foal/) - A tool to find lines eliminated by OpCache's bytecode optimizer
 
 ## Usage
 
@@ -19,12 +20,14 @@ COPY --from=gaiaz/php-tools:7.2-alpine \
     /composer \
     /cachetool \
     /php-cs-fixer \
+    /foal \
     /usr/local/bin/
 
 RUN set -xe \
     && COMPOSER_ALLOW_SUPERUSER=1 composer --version \
     && cachetool --version \
-    && php-cs-fixer --version
+    && php-cs-fixer --version \
+    && foal --version
 ```
 
 ## License
