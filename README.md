@@ -17,9 +17,9 @@
 ## Usage
 
 ```Dockerfile
-FROM php:7.2-cli-alpine
+FROM php:7.4-cli-alpine
 
-COPY --from=gaiaz/php-tools:7.2-alpine \
+COPY --from=gaiaz/php-tools:7.4-alpine \
     /composer \
     /cachetool \
     /php-cs-fixer \
